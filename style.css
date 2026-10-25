@@ -1,0 +1,162 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f4f1ea;
+    color: #333;
+}
+
+header{
+    background-color: rgb(105, 27, 27);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 60;
+    /* margin-bottom: 50px; */
+    ul{
+        li{
+            float: left;
+            a{
+                display: block;
+                padding: 15px 20px;
+                color: #fff;
+                &:hover{
+                    background-color: #d4a373;
+                }
+            }
+        }
+    }
+}
+
+main{
+    .background{
+        background: url(img/bg-image.avif);
+        width: 100%;
+        min-height: 500px;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        margin-top: 50px; /* header'ın yüksekliği 49px ama ben burada background yapısına margin-top 50px değeri vererek, sanki header yapısının 1px border-bottom değeri verişim gibi bir görüntü elde ediyorum. */
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 500px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        div{
+            position: absolute;
+            z-index: 50;
+            top: 50%;
+            left: 50%;
+            color: #fff;
+            transform: translate(-50%, -50%);
+            letter-spacing: 1px;
+            text-align: center;
+            h2{
+                font-size: 45px;
+                padding-bottom: 20px;   
+            }
+            p{
+                font-size: 18px;
+            }
+        }
+    }
+    .content{
+        margin: 36px auto;
+        max-width: 1000px;
+        overflow: hidden;
+        .sidebar{
+            width: 30%;
+            background-color: #fff;
+            height: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            float: left;
+            margin-right: 20px;
+            h3{
+                border-bottom: 2px solid #d4a373;
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+            ul{
+                li{
+                    a{
+                        display: block;
+                        padding: 10px;
+                        border-bottom: 1px solid #aaa;
+                        color: #333;
+                        opacity: 0.8;
+                        &:hover{
+                            background-color: #ddd;
+                            border-left: 4px solid #d4a373;
+                        }
+                    }
+                }
+            }
+        }
+        .tableResponsive{
+            float: right;
+            width: 65%;
+            overflow-x: auto;
+            h3{
+                margin: 30px 0;
+            }
+            table{
+                width: 100%;
+                border-collapse: collapse;
+                text-align: center;
+                thead{
+                    tr{
+                        background-color: brown;
+                        th{
+                            padding: 15px;
+                            color: #fff;
+                            border: 1px solid #aaa;
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        td{
+                            padding: 15px;
+                            border: 1px solid #aaa;
+                        }
+                        &:nth-child(even){
+                            background-color: #e9e6df;
+                        }
+                        &:hover{
+                            background-color: #d4a373;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+footer{
+    background-color: brown;
+    padding: 30px 0;
+    text-align: center;
+    clear: both;
+    color: #fff;
+    ul{
+        li{
+            display: inline-block;
+            margin: 0 15px;
+        }
+    }
+}
